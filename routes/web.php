@@ -3,7 +3,6 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Dashboard\ProjectController as ProjectController;
 
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,13 +14,13 @@ use App\Http\Controllers\Dashboard\ProjectController as ProjectController;
 |
 */
 
-Route::get('/', function () {
-    return view('layouts.app');
-});
+// Route::get('/', function () {
+//     return view('layouts.app');
+// });
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
 
@@ -35,6 +34,8 @@ Route::middleware('auth')
     // ->parameters(['project'=>'post:slug']);
 
 });
+
+
 
 
 
